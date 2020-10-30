@@ -30,7 +30,7 @@ function checkingCardNumber(cardNumber) {
         }
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
         const sum = creditCardNumberForLuhnFormula.reduce(reducer);
-        if (lastDigit === sum % 10) {
+        if ((sum + lastDigit) % 10 === 0) {
             result["correct"] = true;
         } else {
             result["correct"] = false;
