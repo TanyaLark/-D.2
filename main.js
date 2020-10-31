@@ -1,4 +1,4 @@
-let cardNumber = prompt("Введите номер карты: ").trim(); 
+let cardNumber = prompt("Введите номер карты: ").trim();
 checkingCardNumber(cardNumber);
 
 function checkingCardNumber(cardNumber) {
@@ -51,14 +51,14 @@ function checkingCardNumber(cardNumber) {
                 result["paymentSystem"] = "Mastercard";
                 result["accepted"] = true;
                 return console.log(result);
-            case (+clearNumberArray.join("").slice(0, 2) === 50 ||
-                +clearNumberArray.join("").slice(0, 2) >= 56 && +clearNumberArray.join("").slice(0, 2) <= 69):
-                result["paymentSystem"] = "Maestro";
-                result["accepted"] = true;
-                return console.log(result);
             case (+clearNumberArray.join("").slice(0, 4) === 6759 ||
                 +clearNumberArray.join("").slice(0, 6) >= 676770 && +clearNumberArray.join("").slice(0, 6) <= 676774):
                 result["paymentSystem"] = "Maestro UK";
+                result["accepted"] = true;
+                return console.log(result);
+            case (+clearNumberArray.join("").slice(0, 2) === 50 ||
+                +clearNumberArray.join("").slice(0, 2) >= 56 && +clearNumberArray.join("").slice(0, 2) <= 69):
+                result["paymentSystem"] = "Maestro";
                 result["accepted"] = true;
                 return console.log(result);
             default:
